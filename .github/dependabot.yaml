@@ -17,6 +17,7 @@ updates:
         patterns:
         - '^eslint($|-|/)'     # Matches eslint, eslint-* or @scope/eslint
         - '^prettier($|-|/)'   # Matches prettier and prettier-* packages
+
         update-types:
         - 'major'
         - 'minor'
