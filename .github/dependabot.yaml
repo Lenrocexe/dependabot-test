@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 3
+    versioning-strategy: increase
+    rebase-strategy: 'disabled'
+    commit-message:
+      prefix: 'upgrade'
+      prefix-development: 'upgrade'
+      include: 'scope'
+    groups:
+      linting:
+        applies-to: version-updates
+        patterns:
+        - '^eslint($|-|/)'     # Matches eslint, eslint-* or @scope/eslint
+        - '^prettier($|-|/)'   # Matches prettier and prettier-* packages
+        update-types:
+        - 'major'
+        - 'minor'
+        - 'patch'
